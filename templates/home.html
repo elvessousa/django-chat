@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+
+{% block title %}Home | Chat{% endblock %} 
+
+{% block content %}
+<div class="login">
+  <form method="post" action="check">
+    {% csrf_token %}
+    <label for="room">Room name</label>
+    <input id="room" type="text" name="room" />
+    <label for="user">User name</label>
+    <input id="user" type="text" name="user" />
+    <button type="submit">Login</button>
+  </form>
+</div>
+{% endblock %}

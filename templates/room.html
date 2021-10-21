@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %}{{ room }} | Chat{% endblock %} 
+
+{% block scripts %}
+<script src="{% static "js/messages.js" %}" defer></script>
+<script src="{% static "js/submit.js" %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="room">
+  <div class="messages" data-room="{{ room }}" data-user="{{ user }}">
+  </div>
+  <form method="post" action="send">
+    {% csrf_token %}
+    <input id="room_id" type="hidden" name="room_id" value="{{ details.id }}" />
+    <input id="user" type="hidden" name="user" value="{{ user }}" />
+    <div class="inline-group">
+      <input id="message" type="text" name="message" />
+      <button type="submit">Send</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+{% block footer %} {% endblock %}

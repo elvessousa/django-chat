@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Chat{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,900;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static "css/styles.css" %}" />
+    {% block scripts %} {% endblock %}
+  </head>
+  <body>
+    <header>
+      <h3 class="brand">
+        <a href="/">chat</a>
+      </h3>
+    </header>
+
+    {% block content %} {% endblock %}
+
+    {% block footer %}
+    <footer>
+      <p>Elves Sousa - 2021</p>
+    </footer>
+    {% endblock %}
+  </body>
+</html>
